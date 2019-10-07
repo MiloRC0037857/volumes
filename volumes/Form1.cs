@@ -79,22 +79,60 @@ namespace volumes
                 radius = 0.0;
             }
 
-            double sac = ;
-
-            label3.Text = "Surface Area = " + sac;
-
             double height;
 
             try
             { 
-                height = double.Parse(textBox1.Text);
+                height = double.Parse(textBox3.Text);
             }
             catch
             {
                 MessageBox.Show("Not a correct value.");
                 height = 0.0;
             }
-            
+
+            double sac = (Math.PI * radius) * (radius + (Math.Sqrt((height * height) + (radius * radius))));
+
+            label3.Text = "Surface Area = " + sac;
+
+
+
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            double radius;
+
+            try
+            {
+                radius = double.Parse(textBox2.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Not a correct value.");
+                radius = 0.0;
+            }
+
+            double height;
+
+            try
+            {
+                height = double.Parse(textBox3.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Not a correct value.");
+                height = 0.0;
+            }
+
+            double volc = (Math.PI * (radius * radius)) * (height / 3.0);
+
+            label4.Text = "Surface Area = " + volc;
         }
     }
 }
