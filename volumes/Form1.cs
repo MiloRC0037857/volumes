@@ -60,9 +60,41 @@ namespace volumes
                 MessageBox.Show("Not a correct value.");
                 radius = 0.0;
             }
-            double vol = ((4 / 3) * Math.PI) * (radius * radius * radius);
+            double vol = ((4.0 / 3.0) * Math.PI) * (radius * (radius * radius));
 
             label2.Text = "Volume = " + vol;
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            double radius;
+
+            try
+            {
+                radius = double.Parse(textBox2.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Not a correct value.");
+                radius = 0.0;
+            }
+
+            double sac = ;
+
+            label3.Text = "Surface Area = " + sac;
+
+            double height;
+
+            try
+            { 
+                height = double.Parse(textBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Not a correct value.");
+                height = 0.0;
+            }
+            
         }
     }
 }
